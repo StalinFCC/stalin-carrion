@@ -1,5 +1,5 @@
 window.PORTFOLIO_CONFIG = {
-  githubUser: "",
+  githubUser: "stalin-carrion",
   githubProfile: "",
   portfolioUrl: "",
   projects: {
