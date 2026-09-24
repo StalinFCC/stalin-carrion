@@ -6,7 +6,8 @@
   const githubUrl = cfg.githubProfile || (cfg.githubUser ? `https://github.com/${cfg.githubUser}` : '');
   if (git && githubUrl) { git.href = githubUrl; git.hidden = false; }
 
-  const label = {video:'Vídeo',demo:'Demo / referencia',code:'Código'};
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+  const label = isEnglish ? {video:'Video',demo:'Demo / reference',code:'Code'} : {video:'Vídeo',demo:'Demo / referencia',code:'Código'};
   document.querySelectorAll('.project-links').forEach(box => {
     const p = cfg.projects?.[box.dataset.project] || {};
     ['video','demo','code'].forEach(k => {
