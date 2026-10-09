@@ -70,7 +70,8 @@
       '<div class="hero-actions"><a class="button primary" href="#featured">'+esc(t.heroCta)+' ↘</a>'+
       '<a class="button secondary" href="'+esc(db.personal.cv)+'" target="_blank" rel="noopener">'+esc(t.heroCv)+' ↗</a></div></div>'+
       '<a class="hero-art" href="'+projectHref(featuredProject.id)+'"><span class="hero-corner">FEATURED / UNITY</span>'+
-      '<img src="'+esc(featuredProject.image)+'" alt="'+esc(featuredProject[lang].title)+'">'+
+      '<img class="hero-static" src="'+esc(featuredProject.image)+'" alt="'+esc(featuredProject[lang].title)+'">'+
+      '<video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="'+esc(featuredProject.image)+'"><source src="assets/video/intro-blue.mp4" type="video/mp4"></video>'+
       '<div class="hero-art-caption"><div><strong>'+esc(featuredProject[lang].title)+'</strong><small>'+esc(featuredProject[lang].reach)+'</small></div><span class="arrow">↗</span></div></a>'+
       '<span class="scroll-cue">'+esc(t.scroll)+'</span></section>'+
       '<section class="section" id="about"><div class="container">'+sectionHead(t.aboutLabel,t.aboutTitle)+
@@ -129,6 +130,21 @@
   };
 
   if (isCase) renderCase(); else renderHome();
+  // Video is decorative. Keep the screenshot fallback if media fails or motion is reduced.
+  const heroVideo = document.getElementById('hero-video');
+  if (heroVideo) {
+    heroVideo.addEventListener('loadeddata', () => heroVideo.classList.add('video-ready'));
+    heroVideo.addEventListener('error', () => heroVideo.classList.remove('video-ready'));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      heroVideo.pause();
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.classList.remove('video-ready');
+    } else {
+      const attempted = heroVideo.play();
+      if (attempted?.catch) attempted.catch(() => heroVideo.classList.remove('video-ready'));
+    }
+  }
+
   document.documentElement.lang=lang;
 
   const menu = document.getElementById('mobile-menu'), nav = document.getElementById('main-nav');
