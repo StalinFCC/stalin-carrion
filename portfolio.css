@@ -183,3 +183,5 @@ h1,h2,h3,h4,p{margin:0}h1,h2,h3{line-height:1.07;letter-spacing:-.045em}
  html{scroll-behavior:auto}.hero-intro,.hero-art{animation:none}.reveal{opacity:1;transform:none;transition:none}
  .project-card *, .project-card,.button,.featured *{transition:none!important}
 }
+
+.project-card .card-role{font-size:.78rem;min-height:auto;color:#d6cadf;margin-top:11px}.card-role b{color:var(--accent);font-weight:720}
