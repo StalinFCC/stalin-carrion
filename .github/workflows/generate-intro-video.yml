@@ -1,0 +1,38 @@
+name: Generate 3-second hero video
+
+on:
+  push:
+    branches: [redesign-hugo-inspired]
+    paths:
+      - 'scripts/generate-intro-video.sh'
+      - '.github/workflows/generate-intro-video.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  make-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Render the three-second MP4
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
+          chmod +x scripts/generate-intro-video.sh
+          scripts/generate-intro-video.sh
+      - name: Save rendered media in project
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/video/intro-blue.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m "Add rendered three-second blue hero video"
+            git push
+          fi
