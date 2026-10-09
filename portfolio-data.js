@@ -248,7 +248,7 @@ window.SC_PORTFOLIO = {
         {period:"2020 — 2025",title:"Unity, VR and Games Consultant",place:"Solnus · project-based collaboration",desc:"Immersive experiences, VR training and interactive applications for clients."},
         {period:"2021 — 2022",title:"Researcher & Innovation Analyst",place:"UTPL",desc:"Technology research, prototypes and feasibility assessments."}
       ],
-      techLabel:"STACK / TOOLS",education:"EDUCATION",master:"Master's in Video Game Design and Programming · UOC (in progress)",degree:"BSc-equivalent in Computer Systems and Computing Engineering · UTPL",
+      techLabel:"STACK / TOOLS",education:"EDUCATION",master:"Master's in Video Game Design and Programming · UOC (in progress)",degree:"Degree in Computer Systems and Computing Engineering · UTPL",
       contactLabel:"06 / CONTACT",contactTitle:"Let's build something worth experiencing.",contactText:"Unity, XR, simulation, real-time 3D and technical leadership. Open to remote, hybrid or on-site work.",write:"Email me",footer:"Designed to demonstrate real work, specific contributions and substantiated outcomes.",back:"Back to portfolio",caseOverview:"OVERVIEW",caseProblem:"THE PROBLEM",caseSolution:"THE SOLUTION",caseContribution:"MY CONTRIBUTION",caseResult:"OUTCOME / REACH",caseNotes:"TECHNICAL CONTEXT",caseMediaNotice:"Original screenshots are not yet available; this is a conceptual visual.",caseContact:"Want to discuss this project?",contactButton:"Get in touch",linkVideo:"Watch video",linkDemo:"Demo / reference",linkCode:"View code",scroll:"SCROLL",language:"Switch to Spanish",menu:"Open menu"
     }
   }
