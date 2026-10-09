@@ -48,7 +48,7 @@
   const card = (p, i) => '<a class="project-card reveal" data-delay="'+(i%3+1)+'" href="'+projectHref(p.id)+'" aria-label="'+esc(p[lang].title)+' — '+esc(t.viewProject)+'">'+
     '<div class="project-art">'+img(p)+'<span class="project-arrow" aria-hidden="true">↗</span></div>'+
     '<div class="project-kicker"><span>'+esc(p[lang].category)+'</span><span>0'+(i+1)+'</span></div>'+
-    '<h3>'+esc(p[lang].title)+'</h3><p>'+esc(p[lang].description)+'</p>'+tags(p)+'</a>';
+    '<h3>'+esc(p[lang].title)+'</h3><p>'+esc(p[lang].description)+'</p><p class="card-role"><b>'+esc(t.projectRole)+':</b> '+esc(p[lang].role)+'</p>'+tags(p)+'</a>';
 
   const featured = p => '<article class="featured reveal"><a class="featured-visual" href="'+projectHref(p.id)+'" aria-label="'+esc(t.viewProject+': '+p[lang].title)+'">'+img(p)+
     '<span class="featured-image-label">'+esc(p[lang].category)+'</span></a>'+
