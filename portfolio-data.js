@@ -34,7 +34,7 @@ window.SC_PORTFOLIO = {
       }
     },
     {
-      id: "fisica", group: "xr", image: "", theme: "violet",
+      id: "fisica", group: "xr", image: "", theme: "blue",
       tags: ["Unity", "C#", "Meta XR SDK", "Meta Quest", "Firebase"],
       es: {
         title: "Simuladores VR de Física y Matemáticas", category: "VR · EDUCACIÓN",
@@ -58,7 +58,7 @@ window.SC_PORTFOLIO = {
       }
     },
     {
-      id: "jomara", group: "xr", image: "", theme: "coral",
+      id: "jomara", group: "xr", image: "", theme: "blue",
       tags: ["Unity", "C#", "Meta Quest 2", "Meta XR SDK", "Blender"],
       es: {
         title: "Proyecto Jomara", category: "REALIDAD VIRTUAL · IMPACTO SOCIAL",
